@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Albums</title>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <h3>ALBUMS</h3>          
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3" id="albumList" style="margin-top: 10px">
+          {{#each data}}
+          <div class="col">
+            <div class="card shadow-sm" >
+                {{#each images}}
+                  {{#if @first}}
+                    <img width="100%" height="250px" src={{url}}>
+                  {{/if}}
+                {{/each}}
+                <div class="card-body">
+                <h5 class="card-name">{{name}}</h5>
+                <p class="card-text"><a href="http://localhost:8080/getTracks?albumId={{id}}">Albums</a></p>
+                
+                </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <script src="jquery.min.js"></script> 
+    <script src="index.js"></script>
+</body>
+</html>
